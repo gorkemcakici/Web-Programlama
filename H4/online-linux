@@ -1,3 +1,27 @@
 online ortamda linux komutları çalıştırıp denemek için aşağıdaki adresi kullanabiliriz
 
 https://linuxcontainers.org/lxd/try-it
+
+Bazı temel linux komutları
+
+ whoami #Ben kimim
+ pwd #Şu an bulunulan dizini göster
+ cd / #Kök dizine geç
+ ls     #Dizinde ki dosya ve klasörleri göster
+ ls -al #Ayrıntıları ile birlikte göster
+ mkdir deneme #deneme isminde klasör oluşturur
+ cd deneme    #deneme klasörünün içine gir
+ cd .. #Bir üst klasöre çık
+ 
+ pico/nano dosya #Dosya yoksa oluşturur, varsa açar
+ cp kaynak hedef #kaynaktakini hedefe kopyalar
+ 
+ cp /deneme/ayarlar /deneme/yeni_ayarlar
+ rm dosya      #Dosya siler
+ rm -r klasör  #Klasörü siler
+ mv eski yeni #Dosya/Klasör ismini değiştir
+ man komut #Komut hakkında yardımı görüntüle
+
+ #Servisleri görme, başlatma, durdurma
+ sudo service atd seçenek #atd servisinin durumunu görme
+ seçenekler=> status, start, stop, restart, reload
