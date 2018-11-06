@@ -1,4 +1,6 @@
 CRUD İşlemleri
+#Model adı kitap, alanlar: isim:string, sayfa:integer, yazar:string, ozet:text
+rails c
 
 Create
 1)
@@ -11,3 +13,11 @@ k.sayfa=100
 k.yazar="OReily"
 k.ozet="Rails ile programlama"
 k.save
+
+Read
+Kitap.all       #Tüm kayıtlar
+Kitap.find(1)   #id'si 1 olan kayıt
+Kitap.count     #Toplam kayıt sayısı
+Kitap.first     #İlk kayıt
+Kitap.last      #Son kayıt
+Kitap.find_by(isim:"Java")  #Kitap ismi "Java" olan kayıtlar
