@@ -1,0 +1,13 @@
+CRUD İşlemleri
+
+Create
+1)
+Kitap.create(isim:"c sharp",sayfa:123, yazar:"sefer algan")
+
+2)
+k=Kitap.new
+k.isim="Rails programming"
+k.sayfa=100
+k.yazar="OReily"
+k.ozet="Rails ile programlama"
+k.save
