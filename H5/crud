@@ -21,3 +21,14 @@ Kitap.count     #Toplam kayıt sayısı
 Kitap.first     #İlk kayıt
 Kitap.last      #Son kayıt
 Kitap.find_by(isim:"Java")  #Kitap ismi "Java" olan kayıtlar
+
+
+Update
+k=Kitap.first
+k.yazar="Muharrem Taç"
+k.sayfa=121
+k.save
+
+Delete
+k=Kitap.first
+k.destroy
