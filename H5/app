@@ -1,0 +1,10 @@
+rails new kasim9
+cd kasim9
+rails g scaffold kitap isim sayfa:integer yazar
+rake db:migrate
+rails s
+
+#####
+  resources :kitaps, :path => "kitaplar"
+  
+  root "kitaps#index"
