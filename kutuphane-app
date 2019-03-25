@@ -1,0 +1,9 @@
+rails new kutuphane
+cd kutuphane
+rails g scaffold kitap isim yazar ozet:text sayfa:integer
+rake db:migrate
+
+
+
+#Gemfile sqlite hatası için sqlite olan satırı aşağıdaki gibi değiştirin
+gem 'sqlite3', '>1.3','<1.4'
