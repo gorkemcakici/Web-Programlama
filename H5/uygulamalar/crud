@@ -1,0 +1,14 @@
+#2.terminal açıldıktan sonra 
+cd kutuphane 
+rails c
+
+#Create 1.yol
+#Model.create(alan:değer)
+Kitap.create(isim:"ruby", sayfa:12)
+
+#Create 2.yol
+k=Kitap.new
+k.isim="python"
+k.yazar="Mustafa Başer"
+k.sayfa=250
+k.save
