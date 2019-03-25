@@ -20,3 +20,14 @@ Kitap.last  #son kayıt
 Kitap.all  #Tüm kayıtlar
 Kitap.find(:id)  #primary_keye göre
 Kitap.find_by(isim:"python")
+Kitap.count #Tablodaki satır sayısı
+
+#Update işlemi
+k=Kitap.find(1) #Güncellenmek istenen kayıt
+k.sayfa=100  #Güncellenmek istenen alanlar
+k.save
+
+#Delete
+k=Kitap.find(1) #Silinmek istenen kayıt
+k.delete
+Kitap.delete_all #Tüm tabloyu siler
