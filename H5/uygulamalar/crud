@@ -12,3 +12,11 @@ k.isim="python"
 k.yazar="Mustafa Başer"
 k.sayfa=250
 k.save
+
+
+#Read İşlemleri
+Kitap.first #İlk kayıt
+Kitap.last  #son kayıt
+Kitap.all  #Tüm kayıtlar
+Kitap.find(:id)  #primary_keye göre
+Kitap.find_by(isim:"python")
