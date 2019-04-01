@@ -38,4 +38,37 @@ bundle
 //= require bootstrap
 #Bu iki satır //=require . satırından önceye eklenecek
 
+#Paperclip ile resim ekleme
+#Gemfile 
+gem "paperclip" 
+
+rails g paperclip kitap resim
+# Kitap modeline resim isminde bir alanda ekler
+rake db:migrate #veritabanında ki değişikliklerin gerçekleştirilmesi
+
+#app/controllers/kitaps_controller permit listesi güncellenecek
+params.require(:kitap).permit(:isim, :ozet, :resim)
+
+#app/views/kitaps/_form.erb.html dosyasına dosya yüklenmesi için gerekli field eklenecek
+<div class="field">
+    
+  <%= form.label :resim %>
+    
+  <%= form.file_field :resim %>
+  
+</div>
+
+#app/models/kitap.rb dosyasına resim dosyalarını eklemesi için
+has_attached_file :resim, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+ validates_attachment_content_type :resim, content_type: /\Aimage\/.*\z/
+
+
+#resimleri göstermek için görünüm dosyaları editlenecek
+#app/views/kitaps/index.html.erb
+<%= image_tag kitap.resim.url(:thumb) if kitap.resim? %> 
+
+#app/views/kitaps/show.html.erb
+<%= image_tag @kitap.resim.url(:medium) if @kitap.resim? %> 
+
+
 
