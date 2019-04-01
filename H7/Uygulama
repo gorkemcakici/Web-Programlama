@@ -24,7 +24,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 
 #Komut satırında, uygulama klasörü içinde aşağıdaki komut çalıştırılacak
-bundle
+bundle #komut satırında, uygulama klasörü içinde
 
 #app/assets/stylesheets/application.css dosyası
 #application.scss olarak değiştirilir
