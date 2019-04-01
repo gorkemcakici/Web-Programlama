@@ -1,0 +1,17 @@
+#Uygulama şablonu oluşturma
+rails new uygulama
+cd uygulama
+
+#Scaffold ile çalışan bir /kitaps restful mvc uygulaması üretmek
+rails g scaffold kitap isim ozet:text
+rake db:migrate
+rails s
+
+#root sayfası verme (Açılış sayfası)
+#config/routes.rb
+root "kitaps#index"
+
+#Alias verme (Linkleri takma isimle yönlendirmek)
+#config/routes.rb
+#resources :kitaps satırı düzenlenecek
+resources :kitaps, :path=>"kitaplar"
