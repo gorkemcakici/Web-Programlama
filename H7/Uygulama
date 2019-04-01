@@ -15,3 +15,27 @@ root "kitaps#index"
 #config/routes.rb
 #resources :kitaps satırı düzenlenecek
 resources :kitaps, :path=>"kitaplar"
+
+
+#Gemfile
+#bootstrap ve jquery eklenmesi
+#Gemfile a aşağıdaki kütüphaneler eklenecek
+gem 'bootstrap'
+gem 'jquery-rails'
+
+#Komut satırında, uygulama klasörü içinde aşağıdaki komut çalıştırılacak
+bundle
+
+#app/assets/stylesheets/application.css dosyası
+#application.scss olarak değiştirilir
+#ardından application.scss en alta
+@import "bootstrap";
+#satırı eklenir
+
+#app/assets/javascripts/application.js
+#dosyasına aşağıdaki iki satır eklenir
+//= require jquery
+//= require bootstrap
+#Bu iki satır //=require . satırından önceye eklenecek
+
+
