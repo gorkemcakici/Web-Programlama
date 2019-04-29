@@ -5,7 +5,7 @@ rails g model Sayac goruntuleme:integer
 rake db:migrate
 
 #Kitaps controller show metodu
-@x=Sayac.first || Sayac.create(goruntuleme=0)
+@x=Sayac.first || Sayac.create(goruntuleme:0)
     
 @x.goruntuleme+=1
     
