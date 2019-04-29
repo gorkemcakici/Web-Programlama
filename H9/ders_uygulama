@@ -38,3 +38,6 @@ rails g active_admin:install
 #rails g active_admin:resource Model(Hangi tabloya izin verilecek)
 rails g active_admin:resource kitap
 rake db:migrate
+
+#admin şifresi "rails  c" ortamında elle eklenmesi gerekiyor
+ AdminUser.create!(email:"yonetici@yonetim.com", password:'123456', password_confirmation:'123456')
