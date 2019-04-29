@@ -1,0 +1,31 @@
+#Scaffold ile üretilen kitap görüntülemeleri için bir sayaç modeli oluşturma
+#herhangibir kitapın show sayfası görüntülendikçe/yenilendikçe goruntuleme sayısı bir artacak
+
+rails g model Sayac goruntuleme:integer
+rake db:migrate
+
+#Kitaps controller show metodu
+@x=Sayac.first || Sayac.create(goruntuleme=0)
+    
+@x.goruntuleme+=1
+    
+@x.save
+
+#Kitaps show sayfası
+<%= Sayac.first.goruntuleme %>
+
+
+
+#Arama sayfası oluşturmak
+
+rails g controller arama index
+
+#Arama controller index methodu 
+#q değişkeni url adres satırından get sorgusu ile aranan değerleri döndürecek
+@q=params[:q]
+@kitaplar=Kitap.where(isim: @q)  
+
+#Arama index görünümü
+<%@kitaplar.each do |kitap|%>
+ <%= link_to kitap.isim, kitap %> <br/>
+<%end%>
