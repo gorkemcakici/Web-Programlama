@@ -29,3 +29,12 @@ rails g controller arama index
 <%@kitaplar.each do |kitap|%>
  <%= link_to kitap.isim, kitap %> <br/>
 <%end%>
+
+
+#Admin arabirimi (önce Devise kurulacak)
+gem 'activeadmin'  #Gemfile dosyasına eklenecek
+bundle 
+rails g active_admin:install
+#rails g active_admin:resource Model(Hangi tabloya izin verilecek)
+rails g active_admin:resource kitap
+rake db:migrate
